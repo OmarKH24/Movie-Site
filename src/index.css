@@ -1,13 +1,277 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat+Alternates:wght@300&display=swap');
+:root{
+
+  
+--bgColor:#131620;
+--navbgColor: #131623;
+--lightBgColor:#24baef;
+--bgTransparent:rgba(36,186,239,.6) ;
+--fontColor:#fff;
+--borderColor:#a8a8a83d;
+--borderHeight:1px;
+--secondFontColor:#949cb0;
+--mainTransision: 0.5ms;
+--mainMargin: 40px;
+}
+*{
+
+  box-sizing: border-box !important;
+  font-family: Montserrat Alternates;
+  color: var(--fontColor) !important;
+  transition: var(--mainTransision) !important;
+  animation-delay: calc(.1s * var(--i));
+}
+img{
+
+  max-width: 100% !important;
+  height: auto !important;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+HTML{
+
+  scroll-behavior: smooth !important;
+}
+body{
+
+  overflow: auto !important;
+  max-height: 100vh;
+  background-color: var(--bgColor) !important;
+}
+.topM{
+
+  margin-top: 65px !important;
+}
+.section{
+
+  margin-top: 60px;
+}
+.section-center{
+
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  position: absolute;
+  top: 25%;
+  left: 50%;
+}
+
+.errorSection{
+
+  margin-top: 25%;
+}
+
+.errorSection .error{
+
+  font-size: 42px;
+  color: Black !important;
+  font-weight: bold;
+  padding: 40px 80px !important;
+  text-transform: capitalize !important;
+}
+
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~ NavBar ~~~~~~~~~~~~~~~~~~~~~~~~~ */
+nav{
+
+  margin: 5px 15px 0 15px !important;
+  padding: 0 !important;
+  background-color: var(--navbgColor) !important;
+  animation: slideTop 1s ease forwards;
+
+}
+nav .logo{
+
+  font-weight: bold;
+}
+
+nav .first-nav-list{
+
+margin: 0 1%;
+}
+
+nav .second-nav-list{
+
+  width: 40%;
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+nav .second-nav-list form input{
+
+  color: black !important;
+}
+
+nav .second-nav-list .pag-details-icons i{
+
+  margin: 0 !important;
+  padding: 0 15px;
+  font-weight: bold;
+  font-size: 18px;
+}
+
+nav ul li:hover{
+
+  box-shadow: 0 0 25px rgb(0 0 0 / 50%) !important; 
+}
+/* ~~~~~~~~~~~~~~~~~~~~~~~~~ Home ~~~~~~~~~~~~~~~~~~~~~~~~~ */
+.home{
+
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  max-height: 100vh;
+  animation: slideLeft 1s ease forwards;
+
+}
+ .trendRow{
+
+  display: flex;
+  gap: 40px;
+  flex-wrap: wrap;
+  animation: slideTop 1s ease forwards;
+
+}
+.trendRow .trendRow-details{
+
+}
+.trendRow .trendRow-details .brd{
+
+  height: var(--borderHeight);
+  background-color: var(--borderColor);
+}
+
+
+
+.trendRow  .trend-Box{
+
+  max-width: 180px;
+  margin-bottom: 40px;
+  position: relative;
+  text-align: center;
+  transition: 0.5s !important;
+  cursor: pointer;
+}
+.trendRow  .trend-Box .box-img{
+
+  min-width: 100% !important;
+}
+
+.trendRow  .trend-Box .box-rate{
+
+  padding: 7px 5px;
+  background: var(--lightBgColor);
+  position: absolute;
+  top: 0;
+  right: 0;
+  font-size: 12px;
+  font-weight: bold;
+}
+
+.trendRow  .trend-Box:hover{
+  transform: translateY(-6px);
+  box-shadow: 0 2px 15px rgb(0 0 0 / 50%);
+  }
+
+  /* ~~~~~~~~~~~~~~~~~~~~~~~~~ Movies ~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+  .movies-sec{
+
+    display: grid;
+    grid-template-columns: repeat(auto-fill,minmax(calc(100% / 5),1fr));
+    gap: 40px;
+    position: relative !important;
+  }
+
+  .movies-sec .movie-Box{
+
+    position: relative;
+  text-align: center;
+  transition: 0.5s !important;
+  cursor: pointer;
+  animation: slideTop 1s ease forwards;
+
+  }
+
+  .movies-sec .movie-Box:hover{
+    transform: translateY(-6px);
+    box-shadow: 0 2px 15px rgb(0 0 0 / 50%);
+    }
+  
+    /* ~~~~~~~~~~~~~~~~~~~~~~~~~ Movie Details ~~~~~~~~~~~~~~~~~~~~~~~~~ */
+
+    .movie-details-section{
+
+      display: grid;
+      grid-template-columns: repeat(auto-fill,minmax(calc(100% / 3),1fr));
+      gap: 10px;
+    }
+
+    .movie-details-section img{
+      
+      box-shadow: 0 2px 15px rgb(0 0 0 / 50%);
+      animation: slideTop 1s ease forwards;
+
+    }
+
+    .movie-details-section .movie-details{
+      
+      row-gap: 30px;
+      animation: slideLeft 1s ease forwards;
+
+    }
+    .movie-details-section .movie-details .header{
+      
+      font-weight: bold;
+      font-size: 29px;
+    }
+    .movie-details-section .movie-details .tag{
+      
+      font-size: 18px;
+      letter-spacing: 2px;
+    }
+  
+    .movie-details-section .movie-details .ithCategory{
+      
+      padding: 10px;
+      background: var(--lightBgColor);
+      border: 1px solid var(--lightBgColor);
+      font-weight: bold;
+      transition: 0.5s;
+    }
+  
+ 
+    .movie-details-section .movie-details .overview{
+      
+      line-height: 3;
+    }
+
+
+  
+@keyframes slideTop {
+
+  0% {
+    transform: translateY(100px);
+    opacity: 0;
+  }
+  100% {
+      transform: translateY(0px);
+      opacity: 1;
+      
+  }
+  
+}
+
+
+@keyframes slideLeft {
+
+  0% {
+    transform: translateX(-100px);
+    opacity: 0;
+  }
+  100% {
+      transform: translateX(0px);
+      opacity: 1;
+      
+  }
+  
 }
